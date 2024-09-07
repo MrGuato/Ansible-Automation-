@@ -1,0 +1,24 @@
+---
+- name: Configure Linux test boxes in ACCT_Network
+  become: yes
+  hosts: test_boxes_acct
+  remote_user: student
+  tasks: 
+    - name: Ensure TestUser1 exists on ACCT_Network test boxes
+      ansible.builtin.user: 
+        name: "TestUser1"
+        password: "{{'WGU123' | password_hash('sha512') }}"
+        group: sudo
+        state: present
+       
+- name: Configure Linux test boxes in MGMT_Network
+  become: yes
+  hosts: test_boxes_mgmt
+  remote_user: student
+  tasks: 
+    - name: Ensure TestUser2 exists on MGMT_Network test boxes
+      ansible.builtin.user: 
+        name: "TestUser2"
+        password: "{{'WGU123' | password_hash('sha512') }}"
+        group: sudo
+        state: present

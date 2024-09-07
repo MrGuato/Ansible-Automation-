@@ -1,0 +1,12 @@
+windows_desktops:
+  hosts:
+    10.10.1.35:
+    10.10.1.36:
+    10.10.1.43:
+    10.10.1.29:
+  vars:
+    ansible_port: 5985
+    ansible_user: Student
+    ansible_password: P@ssw0rd
+    ansible_connection: winrm
+    ansible_winrm_transport: basic

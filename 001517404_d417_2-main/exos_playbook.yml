@@ -1,0 +1,7 @@
+---
+- name: Add a user on EXOS switches
+  hosts: exos_switches
+  tasks: 
+    - name: Create user account on switch
+      exos_config:
+       lines: create account admin Local-Admin WGU123

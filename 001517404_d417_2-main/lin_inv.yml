@@ -1,0 +1,23 @@
+all:
+  children:
+    test_boxes_acct:
+      hosts:
+        10.10.1.56
+      vars:
+        ansible_user: student
+        ansible_password: P@ssw0rd
+        ansible_become: yes
+        ansible_become_method: sudo
+        ansible_become_password: P@ssw0rd
+        ansible_connection: ssh
+     
+    test_boxes_mgmt:
+      hosts:
+        10.10.1.57
+      vars:
+        ansible_user: student
+        ansible_password: P@ssw0rd
+        ansible_become: yes
+        ansible_become_method: sudo
+        ansible_become_password: P@ssw0rd
+        ansible_connection: ssh
